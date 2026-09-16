@@ -1,0 +1,299 @@
+---
+import Icon from './Icon.astro';
+---
+
+<div class="bg-slate-50/90 border border-slate-200 rounded-3xl p-8 sm:p-10 shadow-sm" id="form-card">
+  <div class="mb-7">
+    <h2 class="font-headline text-2xl sm:text-3xl font-bold text-navy-brand tracking-tight">
+      Zamów serwis lub wycenę
+    </h2>
+    <p class="text-base text-slate-600 mt-1 leading-relaxed">
+      Odpowiadamy telefonicznie w ciągu 30 minut od zgłoszenia.
+    </p>
+  </div>
+
+  <form class="flex flex-col gap-5" id="serviceForm" novalidate>
+    <!-- Baner błędu walidacji (domyślnie ukryty) -->
+    <div 
+      id="formErrorBanner" 
+      aria-live="assertive" 
+      class="hidden animate-toast-in p-3.5 rounded-xl bg-red-50 border border-red-200 text-red-700 text-sm font-medium items-start gap-2.5" 
+      role="alert"
+    >
+      <Icon name="error" class="w-5 h-5 shrink-0 mt-0.5 text-red-600" />
+      <span>Wystąpiły błędy w formularzu. Uzupełnij wymagane pola, aby wysłać zgłoszenie do dyspozytora.</span>
+    </div>
+
+    <!-- Typ usługi -->
+    <fieldset class="flex flex-col gap-2 border-0 p-0 m-0">
+      <legend class="block text-sm font-semibold text-slate-700 mb-2">Powód kontaktu</legend>
+      <div class="grid grid-cols-2 gap-2.5">
+        <label class="cursor-pointer">
+          <input checked class="peer sr-only" name="service_type" type="radio" value="review" />
+          <div class="p-3.5 rounded-2xl bg-white border border-slate-200 peer-checked:border-navy-brand peer-checked:bg-navy-brand peer-checked:text-white transition-all duration-150 active:scale-[0.98] text-center text-sm font-semibold text-slate-700 shadow-sm">
+            Przegląd roczny
+          </div>
+        </label>
+        <label class="cursor-pointer">
+          <input class="peer sr-only" name="service_type" type="radio" value="urgent" />
+          <div class="p-3.5 rounded-2xl bg-white border border-slate-200 peer-checked:border-amber-brand peer-checked:bg-amber-brand peer-checked:text-white transition-all duration-150 active:scale-[0.98] text-center text-sm font-semibold text-slate-700 shadow-sm">
+            Pilna awaria
+          </div>
+        </label>
+        <label class="cursor-pointer">
+          <input class="peer sr-only" name="service_type" type="radio" value="launch" />
+          <div class="p-3.5 rounded-2xl bg-white border border-slate-200 peer-checked:border-navy-brand peer-checked:bg-navy-brand peer-checked:text-white transition-all duration-150 active:scale-[0.98] text-center text-sm font-semibold text-slate-700 shadow-sm">
+            Pierwszy rozruch
+          </div>
+        </label>
+        <label class="cursor-pointer">
+          <input class="peer sr-only" name="service_type" type="radio" value="install" />
+          <div class="p-3.5 rounded-2xl bg-white border border-slate-200 peer-checked:border-navy-brand peer-checked:bg-navy-brand peer-checked:text-white transition-all duration-150 active:scale-[0.98] text-center text-sm font-semibold text-slate-700 shadow-sm">
+            Dobór i montaż
+          </div>
+        </label>
+      </div>
+    </fieldset>
+
+    <!-- Sprzęt -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div class="flex flex-col gap-2">
+        <label class="text-base font-semibold text-navy-brand" for="deviceType">Typ pompy</label>
+        <select 
+          class="w-full h-12 px-4 bg-white border border-slate-200 rounded-xl text-base text-slate-900 focus:border-navy-brand focus:ring-0 transition-colors" 
+          id="deviceType"
+        >
+          <option value="air-water">Powietrze-Woda</option>
+          <option value="ground">Gruntowa</option>
+          <option value="air-air">Klimatyzacja / VRF</option>
+          <option value="cwu">Pompa C.W.U.</option>
+        </select>
+      </div>
+      <div class="flex flex-col gap-2">
+        <label class="text-base font-semibold text-navy-brand" for="deviceBrand">Producent</label>
+        <select 
+          class="w-full h-12 px-4 bg-white border border-slate-200 rounded-xl text-base text-slate-900 focus:border-navy-brand focus:ring-0 transition-colors" 
+          id="deviceBrand"
+        >
+          <option value="daikin">Daikin</option>
+          <option value="panasonic">Panasonic</option>
+          <option value="nibe">Nibe</option>
+          <option value="mitsubishi">Mitsubishi Electric</option>
+          <option value="viessmann">Viessmann</option>
+          <option value="vaillant">Vaillant</option>
+          <option value="inne">Inna marka</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Imię i nazwisko -->
+    <div class="flex flex-col gap-2">
+      <label class="text-base font-semibold text-navy-brand" for="clientName">Imię i nazwisko</label>
+      <input 
+        class="w-full h-12 px-4 bg-white border border-slate-200 rounded-xl text-base text-slate-900 focus:border-navy-brand focus:ring-0 transition-colors placeholder:text-slate-400" 
+        id="clientName" 
+        placeholder="Jan Kowalski" 
+        type="text" 
+        maxlength="80"
+        autocomplete="name"
+        required
+      />
+    </div>
+
+    <!-- Telefon i Miejscowość -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div class="flex flex-col gap-1">
+        <label class="text-base font-semibold text-navy-brand flex items-center justify-between" for="service-phone">
+          <span>Numer telefonu</span>
+          <span class="text-xs font-medium text-red-600">Wymagane</span>
+        </label>
+        <input 
+          class="w-full h-12 px-4 bg-white border border-slate-200 rounded-xl text-base text-slate-900 focus:border-navy-brand focus:ring-0 transition-colors placeholder:text-slate-400" 
+          id="service-phone" 
+          placeholder="+48 000 000 000" 
+          type="tel" 
+          maxlength="20"
+          autocomplete="tel"
+          required 
+        />
+        <div class="hidden text-red-600 font-medium text-sm mt-1 items-center gap-1.5" id="phone-error-desc" role="alert">
+          <Icon name="cancel" class="w-4 h-4 shrink-0" />
+          <span id="phone-error-text">Wprowadź poprawny 9-cyfrowy numer telefonu.</span>
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-1">
+        <label class="text-base font-semibold text-navy-brand flex items-center justify-between" for="service-city">
+          <span>Miejscowość</span>
+          <span class="text-xs font-medium text-red-600">Wymagane</span>
+        </label>
+        <input 
+          class="w-full h-12 px-4 bg-white border border-slate-200 rounded-xl text-base text-slate-900 focus:border-navy-brand focus:ring-0 transition-colors placeholder:text-slate-400" 
+          id="service-city" 
+          placeholder="np. Warszawa" 
+          type="text" 
+          maxlength="80"
+          autocomplete="address-level2"
+          required 
+        />
+        <div class="hidden text-red-600 font-medium text-sm mt-1 items-center gap-1.5" id="city-error-desc" role="alert">
+          <Icon name="cancel" class="w-4 h-4 shrink-0" />
+          <span id="city-error-text">Podaj miejscowość lub kod pocztowy.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Opis problemu -->
+    <div class="flex flex-col gap-2">
+      <label class="text-base font-semibold text-navy-brand" for="issueDescription">Opis problemu lub uwagi</label>
+      <textarea 
+        class="w-full p-3.5 bg-white border border-slate-200 rounded-xl text-base text-slate-900 focus:border-navy-brand focus:ring-0 transition-colors placeholder:text-slate-400 resize-none" 
+        id="issueDescription" 
+        placeholder="Opisz usterkę, kod błędu lub dogodny termin przeglądu..." 
+        rows="3"
+        maxlength="1000"
+      ></textarea>
+    </div>
+
+    <!-- Przycisk wysłania -->
+    <button 
+      class="w-full h-14 bg-amber-brand hover:bg-amber-brand-hover text-white font-bold text-base rounded-xl transition-all duration-150 active:scale-[0.98] shadow-md shadow-orange-500/25 flex items-center justify-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-navy-brand" 
+      type="submit"
+      id="serviceFormSubmitBtn"
+    >
+      <span>Wyślij zgłoszenie</span>
+      <Icon name="send" class="w-5 h-5" />
+    </button>
+  </form>
+
+  <!-- Powiadomienie o sukcesie -->
+  <div 
+    class="hidden animate-toast-in mt-4 p-4 bg-emerald-50 border border-emerald-200 rounded-xl text-emerald-900 text-base flex items-center gap-3" 
+    id="formSuccessToast" 
+    role="status"
+    aria-live="polite"
+  >
+    <Icon name="check_circle" class="w-6 h-6 text-green-brand shrink-0" />
+    <span>Dziękujemy za zgłoszenie! Dyspozytor skontaktuje się w ciągu 30 minut.</span>
+  </div>
+</div>
+
+<script>
+  import { validateServiceForm } from '../scripts/form-validation';
+
+  const form = document.getElementById('serviceForm') as HTMLFormElement | null;
+  const phoneInput = document.getElementById('service-phone') as HTMLInputElement | null;
+  const cityInput = document.getElementById('service-city') as HTMLInputElement | null;
+  const clientNameInput = document.getElementById('clientName') as HTMLInputElement | null;
+  const errorBanner = document.getElementById('formErrorBanner');
+  const phoneErrorDesc = document.getElementById('phone-error-desc');
+  const cityErrorDesc = document.getElementById('city-error-desc');
+  const successToast = document.getElementById('formSuccessToast');
+  const submitBtn = document.getElementById('serviceFormSubmitBtn') as HTMLButtonElement | null;
+
+  let isSubmitting = false;
+
+  phoneInput?.addEventListener('input', () => {
+    if (phoneInput.getAttribute('aria-invalid') === 'true') {
+      const digits = phoneInput.value.replace(/\D/g, '');
+      if (digits.length === 9 || (digits.length === 11 && digits.startsWith('48'))) {
+        phoneInput.classList.remove('border-red-500', 'border-2');
+        phoneInput.removeAttribute('aria-invalid');
+        phoneErrorDesc?.classList.add('hidden');
+        phoneErrorDesc?.classList.remove('flex');
+      }
+    }
+  });
+
+  cityInput?.addEventListener('input', () => {
+    if (cityInput.getAttribute('aria-invalid') === 'true') {
+      if (cityInput.value.trim().length >= 2) {
+        cityInput.classList.remove('border-red-500', 'border-2');
+        cityInput.removeAttribute('aria-invalid');
+        cityErrorDesc?.classList.add('hidden');
+        cityErrorDesc?.classList.remove('flex');
+      }
+    }
+  });
+
+  form?.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    if (isSubmitting) return;
+
+    const phone = phoneInput?.value || '';
+    const city = cityInput?.value || '';
+    const name = clientNameInput?.value || '';
+
+    const validation = validateServiceForm(phone, city, name);
+
+    if (!validation.isValid) {
+      errorBanner?.classList.remove('hidden');
+      errorBanner?.classList.add('flex');
+
+      if (validation.errors.phone) {
+        phoneInput?.classList.add('border-red-500', 'border-2');
+        phoneInput?.setAttribute('aria-invalid', 'true');
+        phoneInput?.setAttribute('aria-describedby', 'phone-error-desc');
+        phoneErrorDesc?.classList.remove('hidden');
+        phoneErrorDesc?.classList.add('flex');
+      } else {
+        phoneInput?.classList.remove('border-red-500', 'border-2');
+        phoneInput?.removeAttribute('aria-invalid');
+        phoneErrorDesc?.classList.add('hidden');
+        phoneErrorDesc?.classList.remove('flex');
+      }
+
+      if (validation.errors.city) {
+        cityInput?.classList.add('border-red-500', 'border-2');
+        cityInput?.setAttribute('aria-invalid', 'true');
+        cityInput?.setAttribute('aria-describedby', 'city-error-desc');
+        cityErrorDesc?.classList.remove('hidden');
+        cityErrorDesc?.classList.add('flex');
+      } else {
+        cityInput?.classList.remove('border-red-500', 'border-2');
+        cityInput?.removeAttribute('aria-invalid');
+        cityErrorDesc?.classList.add('hidden');
+        cityErrorDesc?.classList.remove('flex');
+      }
+    } else {
+      isSubmitting = true;
+
+      // Wyczyść błędy
+      errorBanner?.classList.add('hidden');
+      errorBanner?.classList.remove('flex');
+      phoneInput?.classList.remove('border-red-500', 'border-2');
+      phoneInput?.removeAttribute('aria-invalid');
+      phoneErrorDesc?.classList.add('hidden');
+      cityInput?.classList.remove('border-red-500', 'border-2');
+      cityInput?.removeAttribute('aria-invalid');
+      cityErrorDesc?.classList.add('hidden');
+
+      // Zabezpieczenie przed podwójnym wysłaniem (Double submission guard)
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.classList.add('opacity-80', 'cursor-not-allowed');
+        const btnSpan = submitBtn.querySelector('span');
+        if (btnSpan) btnSpan.textContent = 'Wysyłanie zgłoszenia...';
+      }
+
+      setTimeout(() => {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.classList.remove('opacity-80', 'cursor-not-allowed');
+          const btnSpan = submitBtn.querySelector('span');
+          if (btnSpan) btnSpan.textContent = 'Wyślij zgłoszenie';
+        }
+
+        // Pokaż sukces
+        successToast?.classList.remove('hidden');
+        form.reset();
+        isSubmitting = false;
+
+        setTimeout(() => {
+          successToast?.classList.add('hidden');
+        }, 7000);
+      }, 600);
+    }
+  });
+</script>

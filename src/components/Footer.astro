@@ -1,0 +1,71 @@
+---
+import LogoWhite from '../assets/images/logo-white.svg';
+---
+
+<footer class="w-full bg-navy-brand-dark text-slate-300 border-t border-slate-800">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12 py-16 lg:py-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+    <!-- O firmie & status 24/7 -->
+    <div class="flex flex-col gap-5">
+      <div class="flex items-center gap-3">
+        <LogoWhite 
+          class="h-9 w-auto object-contain" 
+          width="144"
+          height="36"
+          aria-hidden="true"
+        />
+      </div>
+      <p class="text-base text-slate-400 leading-relaxed">
+        Precyzyjna inżynieria HVAC, serwis prewencyjny i awaryjny pomp ciepła na terenie całego kraju.
+      </p>
+      <div class="flex items-center gap-2 text-xs text-emerald-400 font-semibold">
+        <span aria-hidden="true" class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse-ring"></span>
+        <span>Dyspozytornia techniczna aktywna 24/7</span>
+        <span class="sr-only">Status dyspozytorni: Dyżur aktywny 24/7</span>
+      </div>
+    </div>
+
+    <!-- Zakres serwisu -->
+    <div class="flex flex-col gap-4">
+      <h3 class="font-headline text-lg font-bold text-white">Zakres serwisu</h3>
+      <ul class="flex flex-col gap-2.5 text-base text-slate-400">
+        <li><a class="hover:text-white transition-colors" href="#pakiety">Przeglądy roczne i gwarancyjne</a></li>
+        <li><a class="hover:text-white transition-colors" href="#realizacje">Diagnostyka chłodnicza F-Gaz</a></li>
+        <li><a class="hover:text-white transition-colors" href="#kalkulator">Kalibracja krzywych grzewczych</a></li>
+        <li><a class="hover:text-white transition-colors" href="#pakiety">Czyszczenie chemiczne wymienników</a></li>
+        <li><a class="hover:text-white transition-colors" href="#realizacje">Dobór i montaż pomp ciepła</a></li>
+      </ul>
+    </div>
+
+    <!-- Kontakt i dyżur -->
+    <div class="flex flex-col gap-4">
+      <h3 class="font-headline text-lg font-bold text-white">Kontakt i Dyżur</h3>
+      <div class="flex flex-col gap-2.5 text-base text-slate-400">
+        <p class="text-white font-semibold">Serwis całodobowy: +48 22 123 45 67</p>
+        <p>serwis@termopro-hvac.pl</p>
+        <p>ul. Inżynierska 14, 00-001 Warszawa</p>
+        <p class="text-slate-400 mt-2 leading-relaxed">
+          Biuro: Pn–Pt 07:00 – 19:00<br />
+          Pogotowie awaryjne: 24/7
+        </p>
+      </div>
+    </div>
+
+    <!-- Certyfikaty -->
+    <div class="flex flex-col gap-4">
+      <h3 class="font-headline text-lg font-bold text-white">Certyfikaty i Jakość</h3>
+      <p class="text-base text-slate-400 leading-relaxed">
+        Uprawnienia UDT kat. 1, certyfikacja F-Gaz, uprawnienia elektryczne SEP oraz akredytacje czołowych producentów urządzeń grzewczych (Daikin, Panasonic, NIBE).
+      </p>
+    </div>
+  </div>
+
+  <div class="border-t border-slate-800/80 py-8 px-6 lg:px-12 text-base text-slate-400">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <span>© 2025 TermoPro HVAC Sp. z o.o. Wszelkie prawa zastrzeżone.</span>
+      <div class="flex items-center gap-6">
+        <a class="hover:text-white transition-colors" href="#kontakt">Polityka prywatności</a>
+        <a class="hover:text-white transition-colors" href="#kontakt">Regulamin serwisu</a>
+      </div>
+    </div>
+  </div>
+</footer>

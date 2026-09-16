@@ -1,0 +1,236 @@
+---
+import Icon from './Icon.astro';
+---
+
+<section class="py-24 lg:py-32 px-6 lg:px-12 bg-white border-t border-slate-200/70" id="kalkulator">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+    <!-- Lewa strona kalkulatora: Parametry -->
+    <div class="lg:col-span-6 flex flex-col gap-8">
+      <div>
+        <h2 class="font-headline text-3xl sm:text-4xl font-extrabold text-navy-brand tracking-tight">
+          Oblicz oszczędności i cykl serwisowy
+        </h2>
+        <p class="text-lg text-slate-600 mt-3 leading-relaxed">
+          Dopasuj parametry budynku, aby oszacować koszty ogrzewania pompą ciepła i sprawdzić rekomendowane okresy przeglądów.
+        </p>
+      </div>
+
+      <!-- Suwak powierzchni -->
+      <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200 flex flex-col gap-4">
+        <div class="flex justify-between items-baseline">
+          <label class="text-lg font-semibold text-navy-brand" for="areaSlider">
+            Powierzchnia ogrzewana budynku
+          </label>
+          <span class="font-headline text-3xl font-extrabold text-navy-brand tabular-nums">
+            <span id="areaValue">160</span> m²
+          </span>
+        </div>
+        <input 
+          class="w-full h-3 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-amber-brand focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy-brand focus-visible:ring-offset-2 transition-all" 
+          id="areaSlider" 
+          max="400" 
+          min="70" 
+          step="10" 
+          type="range" 
+          value="160" 
+          aria-valuemin="70"
+          aria-valuemax="400"
+          aria-valuenow="160"
+          aria-valuetext="160 metrów kwadratowych"
+        />
+        <div class="flex justify-between text-sm font-medium text-slate-500 tabular-nums">
+          <span>70 m²</span>
+          <span>200 m²</span>
+          <span>400 m²</span>
+        </div>
+      </div>
+
+      <!-- Wybór źródła ciepła -->
+      <div class="flex flex-col gap-3">
+        <span class="text-base font-semibold text-navy-brand">Porównaj z dotychczasowym źródłem ciepła:</span>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3" role="group" aria-label="Dotychczasowe źródło ciepła">
+          <button 
+            class="fuel-btn min-w-0 p-3 sm:p-3.5 rounded-2xl bg-navy-brand text-white text-sm sm:text-base font-semibold transition-all duration-150 active:scale-[0.98] shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy-brand focus-visible:ring-offset-2 text-center flex items-center justify-center" 
+            data-fuel="coal" 
+            type="button"
+            aria-pressed="true"
+          >
+            <span class="truncate">Ekogroszek / Węgiel</span>
+          </button>
+          <button 
+            class="fuel-btn min-w-0 p-3 sm:p-3.5 rounded-2xl bg-white border border-slate-200 text-slate-700 text-sm sm:text-base font-semibold hover:border-slate-300 transition-all duration-150 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy-brand focus-visible:ring-offset-2 text-center flex items-center justify-center" 
+            data-fuel="gas" 
+            type="button"
+            aria-pressed="false"
+          >
+            <span class="truncate">Gaz ziemny</span>
+          </button>
+          <button 
+            class="fuel-btn min-w-0 p-3 sm:p-3.5 rounded-2xl bg-white border border-slate-200 text-slate-700 text-sm sm:text-base font-semibold hover:border-slate-300 transition-all duration-150 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy-brand focus-visible:ring-offset-2 text-center flex items-center justify-center" 
+            data-fuel="oil" 
+            type="button"
+            aria-pressed="false"
+          >
+            <span class="truncate">Olej / Prąd</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Prawa strona kalkulatora: Wyniki -->
+    <div class="lg:col-span-6">
+      <div class="bg-white border-2 border-slate-200 rounded-3xl p-8 sm:p-12 shadow-lg flex flex-col gap-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 pb-8 border-b border-slate-100">
+          <div class="flex flex-col">
+            <span class="text-base text-slate-500 font-medium">Roczny koszt ogrzewania pompą</span>
+            <div class="flex items-baseline gap-2 mt-2">
+              <span class="font-headline text-4xl font-black text-navy-brand tabular-nums tracking-tight" id="heatPumpCost">2 880</span>
+              <span class="text-lg text-slate-600 font-medium">zł / rok</span>
+            </div>
+            <span class="text-xs text-emerald-700 font-semibold mt-1">✓ Wskaźnik SCOP ≥ 4.2</span>
+          </div>
+          <div class="flex flex-col">
+            <span class="text-base text-slate-500 font-medium">Szacowane roczne oszczędności</span>
+            <div class="flex items-baseline gap-2 mt-2">
+              <span class="font-headline text-4xl font-black text-green-brand tabular-nums tracking-tight transition-transform duration-200 inline-block origin-left" id="annualSavings">4 320</span>
+              <span class="text-lg text-emerald-700 font-medium">zł / rok</span>
+            </div>
+            <span class="text-xs text-green-brand font-bold mt-1">do 25-40% taniej niż węgiel/gaz</span>
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-3 bg-emerald-50/70 p-6 rounded-2xl border border-emerald-200/80">
+          <span class="text-base font-bold text-navy-brand flex items-center gap-2">
+            <Icon name="schedule" class="w-5 h-5 text-green-brand" />
+            <span>Rekomendowany harmonogram serwisowy:</span>
+          </span>
+          <p class="text-base text-slate-700 leading-relaxed transition-opacity duration-200" id="calcRecommendation">
+            Dla domu 160 m² rekomendujemy 1 pełny przegląd okresowy rocznie (wrzesień–październik) oraz kontrolę filtra magnetycznego po 6 miesiącach sezonu.
+          </p>
+        </div>
+
+        <!-- CTA Amber -->
+        <a 
+          class="w-full h-14 bg-amber-brand hover:bg-amber-brand-hover text-white font-bold text-base rounded-xl transition-all duration-150 active:scale-[0.98] shadow-md shadow-orange-500/25 flex items-center justify-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-navy-brand" 
+          href="#zgloszenie"
+        >
+          <Icon name="event_available" class="w-5 h-5" />
+          <span>Zarezerwuj termin przeglądu przed zimą</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  import { calculateSavings, type FuelType } from '../scripts/calculator';
+
+  let currentFuel: FuelType = 'coal';
+  const slider = document.getElementById('areaSlider') as HTMLInputElement | null;
+  const areaValue = document.getElementById('areaValue');
+  const heatPumpCost = document.getElementById('heatPumpCost');
+  const annualSavings = document.getElementById('annualSavings');
+  const recommendation = document.getElementById('calcRecommendation');
+  const fuelButtons = document.querySelectorAll<HTMLButtonElement>('.fuel-btn');
+
+  let currentDisplayedHp = 2880;
+  let currentDisplayedSav = 4320;
+  let animFrameId: number | null = null;
+
+  function easeOutCubic(x: number): number {
+    return 1 - Math.pow(1 - x, 3);
+  }
+
+  function animateNumbers(targetHp: number, targetSav: number, triggerPulse = false) {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (prefersReducedMotion) {
+      currentDisplayedHp = targetHp;
+      currentDisplayedSav = targetSav;
+      if (heatPumpCost) heatPumpCost.textContent = targetHp.toLocaleString('pl-PL');
+      if (annualSavings) annualSavings.textContent = targetSav.toLocaleString('pl-PL');
+      return;
+    }
+
+    if (animFrameId !== null) {
+      cancelAnimationFrame(animFrameId);
+    }
+
+    if (triggerPulse && annualSavings) {
+      annualSavings.classList.add('scale-[1.04]');
+      setTimeout(() => {
+        annualSavings?.classList.remove('scale-[1.04]');
+      }, 180);
+    }
+
+    const startHp = currentDisplayedHp;
+    const startSav = currentDisplayedSav;
+    const startTime = performance.now();
+    const duration = 240; // 240ms snappy duration per craft guidelines
+
+    function frame(now: number) {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const ease = easeOutCubic(progress);
+
+      const nextHp = Math.round(startHp + (targetHp - startHp) * ease);
+      const nextSav = Math.round(startSav + (targetSav - startSav) * ease);
+
+      currentDisplayedHp = nextHp;
+      currentDisplayedSav = nextSav;
+
+      if (heatPumpCost) heatPumpCost.textContent = nextHp.toLocaleString('pl-PL');
+      if (annualSavings) annualSavings.textContent = nextSav.toLocaleString('pl-PL');
+
+      if (progress < 1) {
+        animFrameId = requestAnimationFrame(frame);
+      } else {
+        animFrameId = null;
+        currentDisplayedHp = targetHp;
+        currentDisplayedSav = targetSav;
+        if (heatPumpCost) heatPumpCost.textContent = targetHp.toLocaleString('pl-PL');
+        if (annualSavings) annualSavings.textContent = targetSav.toLocaleString('pl-PL');
+      }
+    }
+
+    animFrameId = requestAnimationFrame(frame);
+  }
+
+  function updateDisplay(triggerPulse = false) {
+    const area = slider ? parseInt(slider.value, 10) : 160;
+    if (areaValue) areaValue.textContent = String(area);
+
+    if (slider) {
+      slider.setAttribute('aria-valuenow', String(area));
+      slider.setAttribute('aria-valuetext', `${area} metrów kwadratowych`);
+    }
+
+    const result = calculateSavings(area, currentFuel);
+    animateNumbers(result.heatPumpCost, result.annualSavings, triggerPulse);
+    if (recommendation) recommendation.textContent = result.recommendation;
+  }
+
+  slider?.addEventListener('input', () => updateDisplay(false));
+
+  fuelButtons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      currentFuel = (btn.dataset.fuel as FuelType) || 'coal';
+
+      fuelButtons.forEach((b) => {
+        const isActive = b === btn;
+        b.setAttribute('aria-pressed', String(isActive));
+        if (isActive) {
+          b.classList.remove('bg-white', 'text-slate-700', 'border', 'border-slate-200');
+          b.classList.add('bg-navy-brand', 'text-white');
+        } else {
+          b.classList.remove('bg-navy-brand', 'text-white');
+          b.classList.add('bg-white', 'text-slate-700', 'border', 'border-slate-200');
+        }
+      });
+
+      updateDisplay(true);
+    });
+  });
+
+  updateDisplay(false);
+</script>

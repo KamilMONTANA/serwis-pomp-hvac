@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://termopro-serwis.pl/sitemap-index.xml

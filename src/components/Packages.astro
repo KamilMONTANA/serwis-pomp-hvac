@@ -1,0 +1,143 @@
+---
+import InspectionSteps from './InspectionSteps.astro';
+import Icon from './Icon.astro';
+---
+
+<section class="py-24 lg:py-32 px-6 lg:px-12 bg-white" id="pakiety">
+  <div class="max-w-7xl mx-auto flex flex-col gap-16">
+    <div class="max-w-3xl flex flex-col gap-4 items-center text-center mx-auto">
+      <h2 class="font-headline text-3xl sm:text-4xl font-extrabold text-navy-brand tracking-tight">
+        Pakiety serwisowe pomp ciepła
+      </h2>
+      <p class="text-lg text-slate-600 leading-relaxed">
+        Wszystkie procedury realizowane są według rygorystycznych norm chłodniczych. Każda wizyta kończy się protokołem pomiarowym oraz wpisem do rejestru CRO.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+      <!-- Karta 1: Przegląd okresowy -->
+      <div class="rounded-3xl border border-slate-200 p-8 sm:p-10 flex flex-col justify-between hover:border-slate-300 transition-colors bg-white shadow-sm">
+        <div class="flex flex-col gap-6">
+          <div>
+            <h3 class="font-headline text-2xl font-bold text-navy-brand">Przegląd okresowy</h3>
+            <p class="text-base text-slate-600 mt-2 leading-relaxed">Kompleksowa weryfikacja techniczna wymagana przez producentów dla zachowania gwarancji.</p>
+          </div>
+          <div class="py-4 border-y border-slate-100 flex items-baseline gap-2">
+            <span class="font-headline text-4xl font-extrabold text-navy-brand">450 zł</span>
+            <span class="text-base text-slate-500 font-medium">brutto</span>
+          </div>
+          <ul class="flex flex-col gap-3.5 text-base text-slate-700">
+            <li class="flex items-start gap-3">
+              <Icon name="check_circle" class="w-5 h-5 text-green-brand shrink-0 mt-0.5" />
+              <span>Elektroniczna kontrola szczelności układu</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <Icon name="check_circle" class="w-5 h-5 text-green-brand shrink-0 mt-0.5" />
+              <span>Czyszczenie chemiczne i odkażanie lamel parownika</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <Icon name="check_circle" class="w-5 h-5 text-green-brand shrink-0 mt-0.5" />
+              <span>Pomiary dochłodzenia oraz przegrzania czynnika</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <Icon name="check_circle" class="w-5 h-5 text-green-brand shrink-0 mt-0.5" />
+              <span>Kontrola filtrów magnetycznych i jakości glikolu</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <Icon name="check_circle" class="w-5 h-5 text-green-brand shrink-0 mt-0.5" />
+              <span>Wpis do książki gwarancyjnej i rejestru CRO</span>
+            </li>
+          </ul>
+        </div>
+        <a class="mt-8 w-full py-4 text-center rounded-xl bg-slate-100 hover:bg-slate-200 text-navy-brand font-bold text-base transition-all duration-150 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy-brand" href="#zgloszenie">
+          Zamów przegląd
+        </a>
+      </div>
+
+      <!-- Karta 2: Pogotowie awaryjne -->
+      <div class="rounded-3xl border-2 border-orange-500/30 p-8 sm:p-10 flex flex-col justify-between bg-navy-brand text-white shadow-xl relative overflow-hidden">
+        <div class="absolute top-0 right-0 bg-amber-brand text-white text-xs font-bold uppercase tracking-wider py-1.5 px-6 rounded-bl-xl">
+          Najczęściej wybierany
+        </div>
+        <div class="flex flex-col gap-6">
+          <div>
+            <h3 class="font-headline text-2xl font-bold text-white">Pogotowie awaryjne</h3>
+            <p class="text-base text-slate-300 mt-2 leading-relaxed">Szybka interwencja techniczna w przypadku nagłego zatrzymania ogrzewania zimą.</p>
+          </div>
+          <div class="py-4 border-y border-slate-700/80 flex items-baseline gap-2">
+            <span class="font-headline text-4xl font-extrabold text-amber-400">do 4h</span>
+            <span class="text-base text-slate-300 font-medium">czas dojazdu</span>
+          </div>
+          <ul class="flex flex-col gap-3.5 text-base text-slate-200">
+            <li class="flex items-start gap-3">
+              <Icon name="check_circle" class="w-5 h-5 text-green-brand-light shrink-0 mt-0.5" />
+              <span>Pełna telemetria i odczyt logów błędów</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <Icon name="check_circle" class="w-5 h-5 text-green-brand-light shrink-0 mt-0.5" />
+              <span>Uzupełnianie czynników chłodniczych</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <Icon name="check_circle" class="w-5 h-5 text-green-brand-light shrink-0 mt-0.5" />
+              <span>Wymiana podzespołów ze stacji mobilnej</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <Icon name="check_circle" class="w-5 h-5 text-green-brand-light shrink-0 mt-0.5" />
+              <span>Zabezpieczenie przed zamarznięciem instalacji</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <Icon name="check_circle" class="w-5 h-5 text-green-brand-light shrink-0 mt-0.5" />
+              <span>Uruchomienie awaryjnego dogrzewania</span>
+            </li>
+          </ul>
+        </div>
+        <a class="mt-8 w-full py-4 text-center rounded-xl bg-amber-brand hover:bg-amber-brand-hover text-white font-bold text-base transition-all duration-150 active:scale-[0.98] shadow-md shadow-orange-500/30 flex items-center justify-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-white" href="tel:+48221234567">
+          <Icon name="call" class="w-5 h-5" />
+          <span>Zadzwoń do dyspozytora 24/7</span>
+        </a>
+      </div>
+
+      <!-- Karta 3: Optymalizacja COP -->
+      <div class="rounded-3xl border border-slate-200 p-8 sm:p-10 flex flex-col justify-between hover:border-slate-300 transition-colors bg-white shadow-sm">
+        <div class="flex flex-col gap-6">
+          <div>
+            <h3 class="font-headline text-2xl font-bold text-navy-brand">Optymalizacja COP</h3>
+            <p class="text-base text-slate-600 mt-2 leading-relaxed">Regulacja parametrów pracy i krzywych grzewczych obniżająca rachunki za energię elektryczną.</p>
+          </div>
+          <div class="py-4 border-y border-slate-100 flex items-baseline gap-2">
+            <span class="font-headline text-4xl font-extrabold text-green-brand">do 25%</span>
+            <span class="text-base text-emerald-700 font-semibold">oszczędności prądu</span>
+          </div>
+          <ul class="flex flex-col gap-3.5 text-base text-slate-700">
+            <li class="flex items-start gap-3">
+              <Icon name="check_circle" class="w-5 h-5 text-green-brand shrink-0 mt-0.5" />
+              <span>Korekta nachylenia krzywej grzewczej</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <Icon name="check_circle" class="w-5 h-5 text-green-brand shrink-0 mt-0.5" />
+              <span>Likwidacja taktowania i krótkich cykli sprężarki</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <Icon name="check_circle" class="w-5 h-5 text-green-brand shrink-0 mt-0.5" />
+              <span>Równoważenie hydrauliczne pętli grzewczych</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <Icon name="check_circle" class="w-5 h-5 text-green-brand shrink-0 mt-0.5" />
+              <span>Aktualizacja oprogramowania sterowników</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <Icon name="check_circle" class="w-5 h-5 text-green-brand shrink-0 mt-0.5" />
+              <span>Integracja z instalacją fotowoltaiczną</span>
+            </li>
+          </ul>
+        </div>
+        <a class="mt-8 w-full py-4 text-center rounded-xl bg-slate-100 hover:bg-slate-200 text-navy-brand font-bold text-base transition-all duration-150 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy-brand" href="#kalkulator">
+          Oblicz oszczędności
+        </a>
+      </div>
+    </div>
+
+    <!-- 18 kroków procedury kontrolnej -->
+    <InspectionSteps />
+  </div>
+</section>

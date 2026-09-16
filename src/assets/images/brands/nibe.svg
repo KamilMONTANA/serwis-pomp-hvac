@@ -1,0 +1,9 @@
+<svg role="img" viewBox="0 0 130 32" xmlns="http://www.w3.org/2000/svg">
+  <title>NIBE</title>
+  <!-- NIBE iconic curved ribbon / ellipse outline -->
+  <path d="M6 16C6 8.5 18 3 65 3C112 3 124 8.5 124 16C124 23.5 112 29 65 29C18 29 6 23.5 6 16Z" fill="none" stroke="#004990" stroke-width="2.5"/>
+  <!-- NIBE wordmark centered in bold condensed modern sans -->
+  <g fill="#004990" font-family="'Plus Jakarta Sans', 'Arial Black', sans-serif" font-size="16" font-weight="900" letter-spacing="1.5">
+    <text x="65" y="21.5" text-anchor="middle">NIBE</text>
+  </g>
+</svg>

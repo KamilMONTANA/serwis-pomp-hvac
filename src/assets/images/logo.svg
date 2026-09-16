@@ -1,0 +1,20 @@
+<svg role="img" viewBox="0 0 310 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <title>TermoPro HVAC</title>
+  <!-- Ikona tarczy TermoPro z ciemnoniebieskim tłem -->
+  <rect width="72" height="72" rx="18" fill="#0A2540"/>
+  
+  <!-- Zewnętrzny łuk / celownik chłodzenia (szmaragdowy) -->
+  <path d="M36 17V23M36 49V55M17 36H23M49 36H55" stroke="#059669" stroke-width="3" stroke-linecap="round"/>
+  <path d="M22 36C22 28.268 28.268 22 36 22C43.732 22 50 28.268 50 36" stroke="#059669" stroke-width="3.5" stroke-linecap="round"/>
+  
+  <!-- Dolny łuk grzania (pomarańczowy z węzłami termicznymi) -->
+  <path d="M22 36C22 43.732 28.268 50 36 50C43.732 50 50 43.732 50 36" stroke="#EA580C" stroke-width="3.5" stroke-dasharray="2 6" stroke-linecap="round"/>
+  <circle cx="36" cy="36" r="6" fill="#FFFFFF"/>
+  <path d="M36 47V54M33 51H39" stroke="#EA580C" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- Tekst TERMOPRO -->
+  <g font-family="'Plus Jakarta Sans', sans-serif">
+    <text x="90" y="40" font-size="29" font-weight="900" letter-spacing="-0.5" fill="#0A2540">TERMO<tspan fill="#EA580C">PRO</tspan></text>
+    <text x="91" y="58" font-size="10.5" font-weight="800" letter-spacing="2.8" fill="#475569">POMPY CIEPŁA &amp; HVAC</text>
+  </g>
+</svg>

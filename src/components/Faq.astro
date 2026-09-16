@@ -1,0 +1,61 @@
+---
+import Icon from './Icon.astro';
+
+const faqs = [
+  {
+    id: "faq-1",
+    question: "Jak często należy wykonywać przegląd pompy ciepła?",
+    answer: "Zaleca się realizację autoryzowanego przeglądu raz w roku, najlepiej w okresie wczesnej jesieni przed sezonem zimowym. Regularny serwis chroni sprężarkę przed przeciążeniem i zapobiega nagłym awariom."
+  },
+  {
+    id: "faq-2",
+    question: "Czy coroczny przegląd jest wymagany do utrzymania gwarancji producenta?",
+    answer: "Tak. Wiodący producenci urządzeń (m.in. Daikin, Panasonic, Nibe, Mitsubishi) warunkują wieloletnią gwarancję corocznym przeglądem zrealizowanym przez certyfikowany podmiot z uprawnieniami F-Gaz."
+  },
+  {
+    id: "faq-3",
+    question: "Co to jest wpis do Centralnego Rejestru Operatorów (CRO)?",
+    answer: "Centralny Rejestr Operatorów to urzędowy rejestr urządzeń zawierających fluorowane gazy cieplarniane. Nasi uprawnieni inżynierowie sporządzają i rejestrują karty urządzeń oraz protokoły prób szczelności zgodnie z przepisami prawa."
+  },
+  {
+    id: "faq-4",
+    question: "Jak szybko zespół przyjeżdża do zgłoszenia awarii w sezonie zimowym?",
+    answer: "Dla pilnych awarii związanych z brakiem ogrzewania zimą średni czas dotarcia do klienta wynosi do 4 godzin. Samochody serwisowe posiadają zapas niezbędnych części i stacje odzysku czynnika."
+  }
+];
+---
+
+<section class="py-24 lg:py-32 px-6 lg:px-12 bg-white border-t border-slate-200/70" id="faq">
+  <div class="max-w-4xl mx-auto flex flex-col gap-12">
+    <div>
+      <h2 class="font-headline text-3xl sm:text-4xl font-extrabold text-navy-brand tracking-tight">
+        Najczęściej zadawane pytania
+      </h2>
+      <p class="text-lg text-slate-600 mt-2 leading-relaxed">
+        Wymagania techniczne, gwarancja i organizacja wizyt serwisowych.
+      </p>
+    </div>
+
+    <div class="flex flex-col gap-4">
+      {faqs.map((faq, index) => (
+        <details 
+          class="group bg-slate-50 border border-slate-200 rounded-2xl p-6 sm:p-8 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy-brand" 
+          open={index === 0}
+        >
+          <summary 
+            aria-controls={faq.id} 
+            class="flex items-center justify-between font-headline text-xl font-bold text-navy-brand list-none focus-visible:outline-none"
+          >
+            <span>{faq.question}</span>
+            <span class="w-6 h-6 text-amber-brand group-open:rotate-180 transition-transform duration-200 flex items-center justify-center">
+              <Icon name="expand_more" class="w-6 h-6" />
+            </span>
+          </summary>
+          <p class="text-base sm:text-lg text-slate-600 mt-4 leading-relaxed" id={faq.id}>
+            {faq.answer}
+          </p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>

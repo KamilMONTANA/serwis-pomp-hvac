@@ -1,0 +1,74 @@
+---
+import { Image } from 'astro:assets';
+import heroImage from '../assets/images/hero-heat-pump.jpg';
+import ServiceForm from './ServiceForm.astro';
+import Icon from './Icon.astro';
+---
+
+<section class="relative px-6 lg:px-12 pt-14 pb-20 lg:pt-20 lg:pb-28 bg-white border-b border-slate-200/70">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+    <!-- Lewa kolumna Hero -->
+    <div class="lg:col-span-7 flex flex-col gap-9">
+      <div class="flex flex-col gap-4">
+        <h1 class="font-headline text-4xl sm:text-5xl lg:text-6xl font-extrabold text-navy-brand tracking-tight leading-[1.12]">
+          Profesjonalny serwis, przeglądy i montaż pomp ciepła.
+        </h1>
+        <p class="text-lg sm:text-xl text-slate-600 leading-relaxed max-w-2xl font-normal">
+          Zabezpiecz dom przed usterkami zimą. Przywracamy optymalną sprawność COP urządzeń, usuwamy błędy inwertera i zapewniamy dojazd mobilnego zespołu serwisowego do 4 godzin.
+        </p>
+      </div>
+
+      <!-- Statystyki -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-1">
+        <div class="flex flex-col border-l-2 border-amber-brand pl-4 min-w-0">
+          <span class="font-headline text-3xl font-extrabold text-navy-brand tabular-nums">1 850+</span>
+          <span class="text-base text-slate-600 mt-0.5">Obsłużonych pomp</span>
+        </div>
+        <div class="flex flex-col border-l-2 border-green-brand pl-4 min-w-0">
+          <div class="flex items-center gap-2">
+            <span class="font-headline text-3xl font-extrabold text-green-brand tabular-nums">&lt; 4h</span>
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse-ring shrink-0" title="Pogotowie techniczne aktywne 24/7" aria-hidden="true"></span>
+          </div>
+          <span class="text-base text-slate-600 mt-0.5">Czas dojazdu</span>
+        </div>
+        <div class="flex flex-col border-l-2 border-amber-brand pl-4 min-w-0">
+          <span class="font-headline text-3xl font-extrabold text-navy-brand tabular-nums">4.9/5</span>
+          <span class="text-base text-slate-600 mt-0.5">Opinie klientów</span>
+        </div>
+        <div class="flex flex-col border-l-2 border-green-brand pl-4 min-w-0">
+          <span class="font-headline text-3xl font-extrabold text-navy-brand tabular-nums">10 lat</span>
+          <span class="text-base text-slate-600 mt-0.5">Gwarancji prac</span>
+        </div>
+      </div>
+
+      <!-- Wyróżnione zdjęcie -->
+      <div class="rounded-3xl overflow-hidden shadow-sm border border-slate-200/90 bg-slate-100">
+        <Image 
+          src={heroImage}
+          alt="Instalacja pompy ciepła na postumencie żelbetowym" 
+          class="w-full h-72 sm:h-96 object-cover" 
+          width={800}
+          height={450}
+          loading="eager"
+          decoding="async"
+          fetchpriority="high"
+          format="webp"
+        />
+        <div class="p-6 bg-white border-t border-slate-200/70 flex items-start gap-4">
+          <div class="w-10 h-10 rounded-xl bg-orange-50 text-amber-brand flex items-center justify-center shrink-0">
+            <Icon name="verified_user" class="w-6 h-6" />
+          </div>
+          <div>
+            <h3 class="font-headline text-lg font-bold text-navy-brand mb-1">Standard montażowy i serwisowy TermoPro</h3>
+            <p class="text-base text-slate-600 leading-relaxed">Wibroizolacja fundamentowa, orurowanie w osłonie UV, pełna rejestracja w CRO oraz protokoły prób szczelności F-Gaz.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Prawa kolumna: Formularz -->
+    <div class="lg:col-span-5" id="zgloszenie">
+      <ServiceForm />
+    </div>
+  </div>
+</section>

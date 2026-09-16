@@ -1,0 +1,14 @@
+<svg role="img" viewBox="0 0 110 32" xmlns="http://www.w3.org/2000/svg">
+  <title>UDT Urząd Dozoru Technicznego</title>
+  <!-- UDT emblem: shield / cog gear stylization -->
+  <g transform="translate(2, 2)">
+    <rect width="28" height="28" rx="6" fill="#0A3266"/>
+    <path d="M7 8H11V16C11 18.2 12.3 19.5 14 19.5C15.7 19.5 17 18.2 17 16V8H21V16C21 20.5 18 23 14 23C10 23 7 20.5 7 16V8Z" fill="#FFFFFF"/>
+    <circle cx="14" cy="5" r="2" fill="#E31E24"/>
+  </g>
+  <!-- Text mark UDT & F-GAZ -->
+  <g fill="#0A3266">
+    <text x="36" y="16" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="900" letter-spacing="1">UDT</text>
+    <text x="36" y="26" font-family="'Inter', sans-serif" font-size="8.5" font-weight="700" fill="#E31E24" letter-spacing="0.5">F-GAZ / CRO</text>
+  </g>
+</svg>

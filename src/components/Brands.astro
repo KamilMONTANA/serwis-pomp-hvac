@@ -1,0 +1,40 @@
+---
+import PanasonicLogo from '../assets/images/brands/panasonic.svg';
+import DaikinLogo from '../assets/images/brands/daikin.svg';
+import NibeLogo from '../assets/images/brands/nibe.svg';
+import UdtLogo from '../assets/images/brands/udt.svg';
+---
+
+<section class="py-14 px-6 lg:px-12 bg-slate-50 border-b border-slate-200/80">
+  <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+    <div>
+      <h2 class="font-headline text-2xl font-bold text-navy-brand">Autoryzacje i partnerstwa producentów</h2>
+      <p class="text-base text-slate-600 mt-1">Certyfikowany serwis techniczny czołowych marek pomp ciepła w Polsce.</p>
+    </div>
+    <div class="flex flex-wrap items-center gap-4">
+      <!-- Panasonic -->
+      <div class="px-5 py-3 rounded-2xl bg-white border border-slate-200 shadow-sm flex items-center gap-3 hover:border-slate-300 transition-colors">
+        <PanasonicLogo class="h-4 w-auto object-contain" width="120" height="20" aria-label="Panasonic" />
+        <span class="text-xs font-bold text-slate-500 uppercase tracking-wider border-l border-slate-200 pl-2.5">PRO Partner</span>
+      </div>
+
+      <!-- Daikin -->
+      <div class="px-5 py-3 rounded-2xl bg-white border border-slate-200 shadow-sm flex items-center gap-3 hover:border-slate-300 transition-colors">
+        <DaikinLogo class="h-4 w-auto object-contain" width="100" height="20" aria-label="Daikin" />
+        <span class="text-xs font-bold text-slate-500 uppercase tracking-wider border-l border-slate-200 pl-2.5">D-Partner</span>
+      </div>
+
+      <!-- NIBE -->
+      <div class="px-5 py-3 rounded-2xl bg-white border border-slate-200 shadow-sm flex items-center gap-3 hover:border-slate-300 transition-colors">
+        <NibeLogo class="h-5 w-auto object-contain" width="80" height="20" aria-label="NIBE" />
+        <span class="text-xs font-bold text-slate-500 uppercase tracking-wider border-l border-slate-200 pl-2.5">VIP Serwis</span>
+      </div>
+
+      <!-- UDT F-GAZ -->
+      <div class="px-5 py-3 rounded-2xl bg-white border border-slate-200 shadow-sm flex items-center gap-3 hover:border-slate-300 transition-colors">
+        <UdtLogo class="h-5 w-auto object-contain" width="60" height="20" aria-label="UDT F-GAZ" />
+        <span class="text-xs font-bold text-slate-500 uppercase tracking-wider border-l border-slate-200 pl-2.5">Certyfikat</span>
+      </div>
+    </div>
+  </div>
+</section>

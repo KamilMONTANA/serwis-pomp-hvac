@@ -1,0 +1,44 @@
+---
+const steps = [
+  "Sprawdzenie szczelności układu chłodniczego detektorem wodorowym",
+  "Pomiar temperatur przegrzania i dochłodzenia czynnika chłodniczego",
+  "Diagnostyka prądowa sprężarki i poboru mocy falownika inwertera",
+  "Mechaniczne i biochemiczne mycie lamel parownika jednostki zewnętrznej",
+  "Weryfikacja drożności odpływu kondensatu i kabla grzejnego tacy",
+  "Czyszczenie filtrów siatkowych oraz odmulacza magnetycznego",
+  "Kontrola ciśnienia w naczyniach wzbiorczych C.O. i C.W.U.",
+  "Pomiar pH, twardości wody kotłowej i poziomu inhibitora",
+  "Test przełączania zaworu trójdrogowego C.O. oraz C.W.U.",
+  "Weryfikacja przepływów hydraulicznych i pomp obiegowych",
+  "Kalibracja czujników temperatur zasilania, powrotu i zewnętrznej",
+  "Kontrola połączeń śrubowych w tablicy zasilająco-sterującej",
+  "Pomiar rezystancji izolacji uzwojeń silnika sprężarki",
+  "Test grzałki karteru sprężarki oraz modułu dogrzewacza",
+  "Symulacja i weryfikacja automatycznego cyklu odszraniania",
+  "Ocena amortyzacji wibroizolatorów i konstrukcji wsporczej",
+  "Aktualizacja oprogramowania sterownika do stabilnej wersji",
+  "Sporządzenie protokołu technicznego i wpis do rejestru CRO"
+];
+---
+
+<div class="mt-6 bg-slate-50 rounded-3xl p-8 sm:p-12 border border-slate-200">
+  <div class="max-w-2xl mb-8">
+    <h3 class="font-headline text-2xl sm:text-3xl font-bold text-navy-brand">
+      18 kroków procedury kontrolnej
+    </h3>
+    <p class="text-base text-slate-600 mt-1">
+      Jednolity, rygorystyczny algorytm przeglądu technicznego realizowany przez naszych inżynierów.
+    </p>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-base text-slate-700">
+    {steps.map((step, index) => {
+      const stepNumber = String(index + 1).padStart(2, '0');
+      return (
+        <div class="flex items-start gap-3 p-3 rounded-2xl bg-white border border-slate-100 shadow-sm">
+          <span class="font-headline font-bold text-amber-brand shrink-0 text-lg">{stepNumber}.</span>
+          <span>{step}</span>
+        </div>
+      );
+    })}
+  </div>
+</div>

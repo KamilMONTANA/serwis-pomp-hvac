@@ -1,0 +1,35 @@
+---
+import Icon from './Icon.astro';
+---
+
+<section class="py-20 lg:py-28 px-6 lg:px-12 bg-white" id="kontakt">
+  <div class="max-w-7xl mx-auto rounded-3xl bg-navy-brand text-white p-10 sm:p-16 lg:p-20 flex flex-col md:flex-row items-center justify-between gap-10 shadow-2xl relative overflow-hidden">
+    <div class="absolute -top-24 -right-24 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="flex flex-col gap-4 max-w-2xl relative z-10">
+      <div class="inline-flex items-center gap-2 text-xs font-bold text-amber-brand uppercase tracking-wider">
+        <span>✓ Serwis pomp ciepła całej Polski</span>
+      </div>
+      <h2 class="font-headline text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight">
+        Zadbaj o ciepło w swoim domu przed pierwszymi mrozami.
+      </h2>
+      <p class="text-lg sm:text-xl text-slate-300 leading-relaxed">
+        Zadzwoń do naszego dyspozytora lub zamów termin autoryzowanego przeglądu online.
+      </p>
+    </div>
+    <div class="flex flex-col sm:flex-row gap-4 shrink-0 w-full sm:w-auto relative z-10">
+      <a 
+        class="px-8 py-4 rounded-xl bg-amber-brand hover:bg-amber-brand-hover text-white font-bold text-base transition-all duration-150 active:scale-[0.98] text-center shadow-lg shadow-orange-500/30 flex items-center justify-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-white" 
+        href="tel:+48221234567"
+      >
+        <Icon name="call" class="w-5 h-5" />
+        <span>+48 22 123 45 67</span>
+      </a>
+      <a 
+        class="px-8 py-4 rounded-xl border border-slate-600 hover:bg-white/10 text-white font-semibold text-base transition-all duration-150 active:scale-[0.98] text-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-white" 
+        href="#zgloszenie"
+      >
+        Formularz zgłoszeniowy
+      </a>
+    </div>
+  </div>
+</section>

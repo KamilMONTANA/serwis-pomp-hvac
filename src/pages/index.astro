@@ -1,0 +1,37 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import Brands from '../components/Brands.astro';
+import Packages from '../components/Packages.astro';
+import Realizations from '../components/Realizations.astro';
+import SavingsCalculator from '../components/SavingsCalculator.astro';
+import Testimonials from '../components/Testimonials.astro';
+import Faq from '../components/Faq.astro';
+import CtaBanner from '../components/CtaBanner.astro';
+import Footer from '../components/Footer.astro';
+import { getImage } from 'astro:assets';
+import heroImage from '../assets/images/hero-heat-pump.jpg';
+
+const optimizedHero = await getImage({
+  src: heroImage,
+  width: 800,
+  height: 450,
+  format: 'webp'
+});
+---
+
+<Layout preloadImage={optimizedHero.src}>
+  <Header />
+  <main class="w-full pt-20 flex-1">
+    <Hero />
+    <Brands />
+    <Packages />
+    <Realizations />
+    <SavingsCalculator />
+    <Testimonials />
+    <Faq />
+    <CtaBanner />
+  </main>
+  <Footer />
+</Layout>
